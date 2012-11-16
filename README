@@ -1,0 +1,4 @@
+
+Phake demonstration
+
+run php composer.phar install --dev before testing
