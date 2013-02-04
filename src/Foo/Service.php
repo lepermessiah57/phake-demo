@@ -28,4 +28,13 @@ class Service {
 		$sql = 'select fail from status';
 		$this->dao->runSql($sql);
 	}
+
+	public function curlRequest(){
+
+	}
+
+	public function multiplyCurlRequestAnswerBy($times){
+		$integer = $this->curlRequest();
+		return $times * $integer;
+	}
 }

@@ -141,4 +141,12 @@ class ServiceTest extends \PHPUnit_Framework_TestCase {
 		Phake::verifyNoInteraction($this->dao);
 	}
 		
+	public function testPartialMock(){
+		$this->service = Phake::partialMock('Foo\Service', $this->dao);
+
+		Phake::when($this->service)->curlRequest()->thenReturn(10);
+
+		$answer = $this->service->multiplyCurlRequestAnswerBy(10);
+		$this->assertEquals(100, $answer);
+	}
 }
